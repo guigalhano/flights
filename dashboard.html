@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Price History Tracker</title>
+    <title>Flight Price History Tracker - Santiago to South America</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <header class="header">
             <div class="header-content">
                 <h1>💰 Flight Price History Tracker</h1>
-                <p class="subtitle">Monitor flight prices to/from Santiago and track price trends</p>
+                <p class="subtitle">Monitor flight prices from Santiago to Brazil, Argentina, Peru, Uruguay, Paraguay, and Bolivia</p>
             </div>
         </header>
 
@@ -20,21 +20,47 @@
                 <label for="fromAirport">From:</label>
                 <select id="fromAirport">
                     <option value="SCL">Santiago (SCL)</option>
-                    <option value="MIA">Miami (MIA)</option>
-                    <option value="JFK">New York (JFK)</option>
-                    <option value="MEX">Mexico City (MEX)</option>
-                    <option value="BOG">Bogota (BOG)</option>
                 </select>
             </div>
 
             <div class="control-group">
                 <label for="toAirport">To:</label>
                 <select id="toAirport">
-                    <option value="MIA">Miami (MIA)</option>
-                    <option value="JFK">New York (JFK)</option>
-                    <option value="MEX">Mexico City (MEX)</option>
-                    <option value="BOG">Bogota (BOG)</option>
-                    <option value="SCL">Santiago (SCL)</option>
+                    <optgroup label="Brazil">
+                        <option value="GIG">Rio de Janeiro (GIG)</option>
+                        <option value="GRU">São Paulo (GRU)</option>
+                        <option value="BSB">Brasília (BSB)</option>
+                        <option value="BEL">Belém (BEL)</option>
+                        <option value="SSA">Salvador (SSA)</option>
+                        <option value="REC">Recife (REC)</option>
+                        <option value="CWB">Curitiba (CWB)</option>
+                        <option value="POA">Porto Alegre (POA)</option>
+                    </optgroup>
+                    <optgroup label="Argentina">
+                        <option value="EZE">Buenos Aires (EZE)</option>
+                        <option value="AEP">Buenos Aires Aeroparque (AEP)</option>
+                        <option value="MDQ">Mar del Plata (MDQ)</option>
+                        <option value="MZA">Mendoza (MZA)</option>
+                        <option value="ROS">Rosario (ROS)</option>
+                        <option value="SVJ">San Juan (SVJ)</option>
+                    </optgroup>
+                    <optgroup label="Peru">
+                        <option value="LIM">Lima (LIM)</option>
+                        <option value="CUZ">Cusco (CUZ)</option>
+                        <option value="AYP">Arequipa (AYP)</option>
+                        <option value="PEM">Puerto Maldonado (PEM)</option>
+                    </optgroup>
+                    <optgroup label="Uruguay">
+                        <option value="MVD">Montevideo (MVD)</option>
+                    </optgroup>
+                    <optgroup label="Paraguay">
+                        <option value="ASU">Asunción (ASU)</option>
+                    </optgroup>
+                    <optgroup label="Bolivia">
+                        <option value="LPB">La Paz (LPB)</option>
+                        <option value="VVI">Santa Cruz de la Sierra (VVI)</option>
+                        <option value="CBB">Cochabamba (CBB)</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -66,28 +92,28 @@
                     <canvas id="priceChart"></canvas>
                 </div>
                 <div id="trendsInfo" class="info-box">
-                    <p>Select a date and click "Search Prices" to view price trends</p>
+                    <p>Select a destination and date, then click "Search Prices" to view price trends</p>
                 </div>
             </section>
 
             <section id="deals" class="tab-content">
                 <h2>Cheapest Flights</h2>
                 <div id="dealsContainer" class="deals-container">
-                    <p>Select a date and click "Search Prices" to find the best deals</p>
+                    <p>Select a destination and date, then click "Search Prices" to find the best deals</p>
                 </div>
             </section>
 
             <section id="history" class="tab-content">
                 <h2>Price History</h2>
                 <div id="historyContainer" class="history-container">
-                    <p>Select a route and click "Search Prices" to view price history</p>
+                    <p>Select a destination and date, then click "Search Prices" to view complete price history</p>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
             <p>Last updated: <span id="lastUpdate">--:--:--</span></p>
-            <p>Tracking flights to/from Santiago • Prices in USD</p>
+            <p>28 routes tracked across South America • Prices in USD</p>
         </footer>
     </div>
 
