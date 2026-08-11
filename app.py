@@ -4,7 +4,7 @@ from price_tracker import PriceDatabase, FlightPriceTracker
 from datetime import datetime, timedelta
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
 db = PriceDatabase()
