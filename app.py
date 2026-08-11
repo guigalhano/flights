@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, redirect
 from flask_cors import CORS
 from price_tracker import PriceDatabase, FlightPriceTracker
 from datetime import datetime, timedelta
@@ -9,6 +9,11 @@ CORS(app)
 
 db = PriceDatabase()
 tracker = FlightPriceTracker()
+
+
+@app.route('/')
+def home():
+    return redirect('/dashboard.html')
 
 @app.route('/api/health', methods=['GET'])
 def health():
