@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price History Tracker</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>💰 Flight Price History Tracker</h1>
+                <p class="subtitle">Monitor flight prices to/from Santiago and track price trends</p>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="fromAirport">From:</label>
+                <select id="fromAirport">
+                    <option value="SCL">Santiago (SCL)</option>
+                    <option value="MIA">Miami (MIA)</option>
+                    <option value="JFK">New York (JFK)</option>
+                    <option value="MEX">Mexico City (MEX)</option>
+                    <option value="BOG">Bogota (BOG)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="toAirport">To:</label>
+                <select id="toAirport">
+                    <option value="MIA">Miami (MIA)</option>
+                    <option value="JFK">New York (JFK)</option>
+                    <option value="MEX">Mexico City (MEX)</option>
+                    <option value="BOG">Bogota (BOG)</option>
+                    <option value="SCL">Santiago (SCL)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate">
+            </div>
+
+            <button id="searchBtn" class="btn btn-primary">Search Prices</button>
+            <button id="trackBtn" class="btn btn-secondary">Start Tracking</button>
+        </div>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="trends">
+                <span>📊</span> Price Trends
+            </button>
+            <button class="tab-btn" data-tab="deals">
+                <span>🎯</span> Best Deals
+            </button>
+            <button class="tab-btn" data-tab="history">
+                <span>📈</span> History
+            </button>
+        </nav>
+
+        <main class="content">
+            <section id="trends" class="tab-content active">
+                <h2>Price Trends Over Time</h2>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+                <div id="trendsInfo" class="info-box">
+                    <p>Select a date and click "Search Prices" to view price trends</p>
+                </div>
+            </section>
+
+            <section id="deals" class="tab-content">
+                <h2>Cheapest Flights</h2>
+                <div id="dealsContainer" class="deals-container">
+                    <p>Select a date and click "Search Prices" to find the best deals</p>
+                </div>
+            </section>
+
+            <section id="history" class="tab-content">
+                <h2>Price History</h2>
+                <div id="historyContainer" class="history-container">
+                    <p>Select a route and click "Search Prices" to view price history</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Last updated: <span id="lastUpdate">--:--:--</span></p>
+            <p>Tracking flights to/from Santiago • Prices in USD</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
