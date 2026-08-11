@@ -101,10 +101,11 @@ class FlightPriceTracker:
     def __init__(self, db_path='price_history.db'):
         self.db = PriceDatabase(db_path)
         self.routes = [
-            # Brazil - 8 routes
+            # Brazil - 9 routes
             {"from": "SCL", "to": "GIG", "city": "Rio de Janeiro, Brazil"},
             {"from": "SCL", "to": "GRU", "city": "São Paulo, Brazil"},
             {"from": "SCL", "to": "BSB", "city": "Brasília, Brazil"},
+            {"from": "SCL", "to": "CNF", "city": "Belo Horizonte, Brazil"},
             {"from": "SCL", "to": "BEL", "city": "Belém, Brazil"},
             {"from": "SCL", "to": "SSA", "city": "Salvador, Brazil"},
             {"from": "SCL", "to": "REC", "city": "Recife, Brazil"},
