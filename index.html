@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santiago Flights Monitor</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>✈️ Santiago Flights Monitor</h1>
+                <p class="subtitle">Real-time flight tracking for Comodoro Arturo Merino Benítez International Airport</p>
+            </div>
+            <div class="header-info">
+                <div class="info-box">
+                    <span class="label">Current Time (CLT)</span>
+                    <span class="value" id="currentTime">--:--:--</span>
+                </div>
+                <div class="info-box">
+                    <span class="label">Active Flights</span>
+                    <span class="value" id="activeFlights">0</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="arrivals">
+                <span class="icon">📥</span> Arrivals
+            </button>
+            <button class="tab-btn" data-tab="departures">
+                <span class="icon">📤</span> Departures
+            </button>
+            <button class="tab-btn" data-tab="stats">
+                <span class="icon">📊</span> Statistics
+            </button>
+        </nav>
+
+        <main class="content">
+            <!-- Arrivals Tab -->
+            <section id="arrivals" class="tab-content active">
+                <div class="section-header">
+                    <h2>Incoming Flights</h2>
+                    <div class="filters">
+                        <input type="text" id="arrivalSearch" class="search-box" placeholder="Search by flight, airline, or city...">
+                        <select id="arrivalFilter" class="filter-select">
+                            <option value="">All Airlines</option>
+                            <option value="LATAM">LATAM</option>
+                            <option value="SKW">SkyWest</option>
+                            <option value="DLH">Lufthansa</option>
+                            <option value="IBE">Iberia</option>
+                            <option value="AFR">Air France</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="arrivalsList" class="flights-list">
+                    <div class="loading">Loading flight data...</div>
+                </div>
+            </section>
+
+            <!-- Departures Tab -->
+            <section id="departures" class="tab-content">
+                <div class="section-header">
+                    <h2>Outgoing Flights</h2>
+                    <div class="filters">
+                        <input type="text" id="departureSearch" class="search-box" placeholder="Search by flight, airline, or city...">
+                        <select id="departureFilter" class="filter-select">
+                            <option value="">All Airlines</option>
+                            <option value="LATAM">LATAM</option>
+                            <option value="SKW">SkyWest</option>
+                            <option value="DLH">Lufthansa</option>
+                            <option value="IBE">Iberia</option>
+                            <option value="AFR">Air France</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="departuresList" class="flights-list">
+                    <div class="loading">Loading flight data...</div>
+                </div>
+            </section>
+
+            <!-- Statistics Tab -->
+            <section id="stats" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Arrivals Today</h3>
+                        <div class="stat-value" id="arrivalCount">0</div>
+                        <div class="stat-detail">flights landed</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Departures Today</h3>
+                        <div class="stat-value" id="departureCount">0</div>
+                        <div class="stat-detail">flights departed</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>On Time Rate</h3>
+                        <div class="stat-value" id="onTimeRate">--</div>
+                        <div class="stat-detail">percentage</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Average Delay</h3>
+                        <div class="stat-value" id="avgDelay">--</div>
+                        <div class="stat-detail">minutes</div>
+                    </div>
+                </div>
+
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <h3>Flights by Airline</h3>
+                        <canvas id="airlineChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Flight Status Distribution</h3>
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="top-destinations">
+                    <h3>Top Destinations</h3>
+                    <div id="destinationsList" class="destinations-list">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Last updated: <span id="lastUpdate">--:--:--</span></p>
+            <p>Data refreshes every 30 seconds</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
