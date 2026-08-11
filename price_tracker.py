@@ -131,6 +131,37 @@ class FlightPriceTracker:
             {"from": "SCL", "to": "LPB", "city": "La Paz, Bolivia"},
             {"from": "SCL", "to": "VVI", "city": "Santa Cruz de la Sierra, Bolivia"},
             {"from": "SCL", "to": "CBB", "city": "Cochabamba, Bolivia"},
+            # Reverse routes - South America to Santiago
+            # Brazil to Santiago
+            {"from": "GIG", "to": "SCL", "city": "Rio de Janeiro to Santiago"},
+            {"from": "GRU", "to": "SCL", "city": "São Paulo to Santiago"},
+            {"from": "BSB", "to": "SCL", "city": "Brasília to Santiago"},
+            {"from": "CNF", "to": "SCL", "city": "Belo Horizonte to Santiago"},
+            {"from": "BEL", "to": "SCL", "city": "Belém to Santiago"},
+            {"from": "SSA", "to": "SCL", "city": "Salvador to Santiago"},
+            {"from": "REC", "to": "SCL", "city": "Recife to Santiago"},
+            {"from": "CWB", "to": "SCL", "city": "Curitiba to Santiago"},
+            {"from": "POA", "to": "SCL", "city": "Porto Alegre to Santiago"},
+            # Argentina to Santiago
+            {"from": "EZE", "to": "SCL", "city": "Buenos Aires to Santiago"},
+            {"from": "AEP", "to": "SCL", "city": "Buenos Aires Aeroparque to Santiago"},
+            {"from": "MDQ", "to": "SCL", "city": "Mar del Plata to Santiago"},
+            {"from": "MZA", "to": "SCL", "city": "Mendoza to Santiago"},
+            {"from": "ROS", "to": "SCL", "city": "Rosario to Santiago"},
+            {"from": "SVJ", "to": "SCL", "city": "San Juan to Santiago"},
+            # Peru to Santiago
+            {"from": "LIM", "to": "SCL", "city": "Lima to Santiago"},
+            {"from": "CUZ", "to": "SCL", "city": "Cusco to Santiago"},
+            {"from": "AYP", "to": "SCL", "city": "Arequipa to Santiago"},
+            {"from": "PEM", "to": "SCL", "city": "Puerto Maldonado to Santiago"},
+            # Uruguay to Santiago
+            {"from": "MVD", "to": "SCL", "city": "Montevideo to Santiago"},
+            # Paraguay to Santiago
+            {"from": "ASU", "to": "SCL", "city": "Asunción to Santiago"},
+            # Bolivia to Santiago
+            {"from": "LPB", "to": "SCL", "city": "La Paz to Santiago"},
+            {"from": "VVI", "to": "SCL", "city": "Santa Cruz de la Sierra to Santiago"},
+            {"from": "CBB", "to": "SCL", "city": "Cochabamba to Santiago"},
         ]
     
     def fetch_flights(self, from_airport, to_airport, date):
